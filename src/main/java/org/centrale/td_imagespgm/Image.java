@@ -94,7 +94,7 @@ public class Image {
             e.printStackTrace();
         }
     }
-    public boolean equal(Image image2) {
+    public boolean egale(Image image2) {
     // Compare dimensions
     if (this.largeur != image2.largeur || this.hauteur != image2.hauteur) {
         return false;

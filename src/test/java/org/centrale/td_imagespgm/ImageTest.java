@@ -46,13 +46,13 @@ public class ImageTest {
         coins.Lecture();
         brain.Lecture();
         System.out.println("assert");
-        assertFalse(baboon.equal(coins));
-        assertFalse(baboon.equal(brain));
-        assertFalse(coins.equal(brain));
+        assertFalse(baboon.egale(coins));
+        assertFalse(baboon.egale(brain));
+        assertFalse(coins.egale(brain));
 
-        assertTrue(baboon.equal(baboon));
-        assertTrue(coins.equal(coins));
-        assertTrue(brain.equal(brain));
+        assertTrue(baboon.egale(baboon));
+        assertTrue(coins.egale(coins));
+        assertTrue(brain.egale(brain));
 
     }
 
