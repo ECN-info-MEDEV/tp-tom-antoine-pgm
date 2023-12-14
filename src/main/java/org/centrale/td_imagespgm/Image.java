@@ -65,7 +65,6 @@ public class Image {
             }
             fichier.close();
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -91,7 +90,6 @@ public class Image {
             }
             ecrit.close();
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
     public boolean egale(Image image2) {
