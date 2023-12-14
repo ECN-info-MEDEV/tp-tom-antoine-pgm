@@ -33,18 +33,18 @@ public class Image {
 
     }
 
-    public void Lecture() {
+    public void Lecture() throws IOException{
+        BufferedReader fichier = new BufferedReader(new FileReader(nom));
         try {
             String ligne;
-            BufferedReader fichier = new BufferedReader(new FileReader(nom));
-            fichier.readLine();
-            fichier.readLine();
+            ligne = fichier.readLine();
+            ligne = fichier.readLine();
             String dimension = fichier.readLine();
             String delimiteurs = " ";
             StringTokenizer tokenizer = new StringTokenizer(dimension, delimiteurs);
             largeur = Integer.parseInt(tokenizer.nextToken());
             hauteur = Integer.parseInt(tokenizer.nextToken());
-            fichier.readLine();
+            ligne =fichier.readLine();
             image = new int[hauteur][largeur];
             int i=0;
             int j=0;
@@ -64,15 +64,15 @@ public class Image {
                 i++;
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } finally{
+            fichier.close();
         }
     }
 
-    public void Ecriture(String nom) {
+    public void Ecriture(String nom) throws IOException {
         String ligne = "";
+        BufferedWriter ecrit = new BufferedWriter(new FileWriter(nom));
         try {
-            BufferedWriter ecrit = new BufferedWriter(new FileWriter(nom));
             ecrit.write("P2");
             ecrit.newLine();
             ecrit.write("#");
@@ -89,8 +89,8 @@ public class Image {
                 ecrit.newLine();
                 ligne = "";
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        }finally{
+            ecrit.close();
         }
     }
     public boolean equal(Image image2) {
